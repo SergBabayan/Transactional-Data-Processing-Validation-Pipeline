@@ -18,7 +18,7 @@ def load_table(data: pd.DataFrame, table_name: str, if_exists='replace'):
         index=False,
         chunksize=1000
     )
-    print(f"  ✅ {table_name}: {len(data):,} rows loaded")
+    print(f"{table_name}: {len(data):,} rows loaded")
 
 
 def load_all(df_clean, df_cancelled, daily_sales, customer_summary):
@@ -27,7 +27,7 @@ def load_all(df_clean, df_cancelled, daily_sales, customer_summary):
     load_table(df_cancelled,      'cancellations')
     load_table(daily_sales,       'daily_sales')
     load_table(customer_summary,  'customer_summary')
-    print("\n✅ All tables loaded into data/sales.db")
+    print("\nAll tables loaded into data/sales.db")
 
 def verify_load():
     engine = get_engine()

@@ -32,7 +32,6 @@ def fix_dtypes(data: pd.DataFrame) -> pd.DataFrame:
     return data
 
 def aggregate_daily_sales(data: pd.DataFrame) -> pd.DataFrame:
-    """Агрегация по дням — загружается в таблицу daily_sales"""
     daily = data.groupby('Date').agg(
         total_revenue   =('Revenue',    'sum'),
         total_orders    =('InvoiceNo',  'nunique'),
